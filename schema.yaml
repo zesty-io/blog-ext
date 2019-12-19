@@ -1,0 +1,100 @@
+type: plugin
+name: Blog with Authors, Tags, and Categories
+author: Zesty.io
+models:
+ -
+  name: blog_main_page
+  label: Blog Main Page
+  view: views/blog-main-page.tpl
+  type: templateset
+  hasRoute: true
+  showAsTable: true
+  content: contents/blog-page.yaml
+  fields:
+   -
+    name: title
+    type: text
+    label: Blog Title
+    options:
+     required: true
+   -
+    name: description
+    type: wysiwyg_advanced
+    label: Blog Description
+ -
+  name: blog_authors_page
+  label: Authors Page
+  parent: blog_main_page	  # the model's parent, this organizes config and the navigation layout. For routing, Page parents are set in the contents yaml
+  view: views/blog-authors-page.tpl
+  type: templateset
+  content: contents/blog-authors.yaml
+  hasRoute: true
+  showAsTable: true
+  fields:
+   -
+    name: title
+    type: text
+    label: Author Title
+    options:
+     required: true
+   -
+    name: description
+    type: wysiwyg_advanced
+    label: Author Description
+ -
+  name: blog_authors
+  label: Authors
+  parent: blog_authors_page	  # the collection's parent, this organizes config and the navigation layout. For routing, Page parents are set in the contents yaml
+  view: views/blog-author.tpl
+  type: templateset
+  content: contents/blog-authors.yaml
+  hasRoute: false
+  showAsTable: true
+  fields:
+   -
+    name: name
+    type: text
+    label: Author Name
+    options:
+     required: true
+     list: true
+     sortTable: true
+   -
+    name: title
+    label: Author Title
+    type: text
+   -
+    name: company
+    label: Author Company
+    type: text
+   -
+    name: email
+    type: text
+    label: Author Email
+    options:
+     required: true
+     list: true
+   -
+    name: image
+    type: images
+    label: Author Photo
+    options:
+     required: true
+     limit: 1
+     list: true
+   -
+    name: description
+    label: Author Description
+    type: wysiwyg_advanced
+   -
+    name: image
+    type: images
+    label: Author Photo
+    options:
+     required: true
+     limit: 1
+     list: true
+   -
+    name: link
+    type: link
+    label: Author URL
