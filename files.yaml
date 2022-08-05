@@ -1,0 +1,7 @@
+files:
+  -
+     name: /blog/search.json
+     source: /files/search.json
+  -
+     name: /blog/tags.json
+     source: /files/tags.json
