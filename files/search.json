@@ -1,0 +1,7 @@
+[
+    {{each blog_article as article where article.title LIKE '%{get_var.q}%' or article.article LIKE '%{get_var.q}%'  limit 10 }}
+    {{article.toJSON(2, true) }}
+    {{if {article._length} > {article._num}  }}, {{ end-if}}
+    
+    {{end-each}}
+]

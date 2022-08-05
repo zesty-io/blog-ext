@@ -1,0 +1,11 @@
+{{ if {request.queryParam(limit)} }}
+[
+    {{ each blog_articles as article where find_in_set('{request.queryParam(tag)}',tags) limit {request.queryParam(limit)} }}
+    {{article.toJSON(2, true) }}
+    {{if {article._length} > {article._num}  }}, {{ end-if}}
+    {{end-each}}
+
+]
+{{else}}
+    Need limit query param
+{{end-if}}
