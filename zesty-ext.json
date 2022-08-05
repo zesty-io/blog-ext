@@ -1,4 +1,8 @@
 {
     "name":"Generic Blog",
-    "reference-name":"generic-blog"
+    "reference-name":"generic-blog",
+    "schema" : "schema.yaml",
+    "settings" : "setting.yaml",
+    "style_variables" : "style-variables.yaml",
+    "files" : "files.yaml"
 }
