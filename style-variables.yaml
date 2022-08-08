@@ -1,12 +1,11 @@
 type: style_variables
 variables:
-  -
-    name: h1-color
+  - name: h1-color
     type: text
     label: H1 HEader Color
     category: 1
-    description:
+    description: null
     sort: 1
     editInContent: true
     locked: false
-    value: #000
+    value: null
