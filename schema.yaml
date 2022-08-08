@@ -63,13 +63,6 @@ models:
         options: null
         required: true
         list: true
-      - name: image
-        type: images
-        label: Author Photo
-        options: null
-        required: true
-        limit: 1
-        list: true
       - name: description
         label: Author Description
         type: wysiwyg_advanced
@@ -131,10 +124,10 @@ models:
         type: text
         label: Tag Title
       - name: description
-        type: wysiwig_basic
+        type: wysiwyg_basic
         label: Tag Description
       - name: image
-        type: image
+        type: images
         label: Tag Image
         options:
           required: true
