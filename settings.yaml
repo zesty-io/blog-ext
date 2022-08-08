@@ -1,25 +1,25 @@
 settings: # settings for plugins are different than blueprint settings.
   -
-   name: main_page_limit
-   group: generic-blog
-   type: number
-   label: Number of Articles to Show on the Main Page
-   value: 5
+    name: main_page_limit
+    group: generic-blog
+    type: number
+    label: Number of Articles to Show on the Main Page
+    value: 5
   -
-   name: category_limit
-   group: generic-blog
-   type: number
-   label: Number of Categories to show on the side bar
-   value: 7
+    name: category_limit
+    group: generic-blog
+    type: number
+    label: Number of Categories to show on the side bar
+    value: 7
   -
-   name: recent_articles_limit
-   group: generic-blog
-   type: number
-   label: Number of Recent Articles to show on the side bar
-   value: 3
+    name: recent_articles_limit
+    group: generic-blog
+    type: number
+    label: Number of Recent Articles to show on the side bar
+    value: 3
   -
-   name: main_page_article_text
-   group: generic-blog   
-   type: text
-   label: Main Page Article Text
-   value: Recent Articles
+    name: main_page_article_text
+    group: generic-blog   
+    type: text
+    label: Main Page Article Text
+    value: Recent Articles

@@ -1,168 +1,142 @@
 type: plugin
-name: Blog with Authors, Tags, and Categories
+name: 'Blog with Authors, Tags, and Categories'
 author: Zesty.io
 models:
- -
-  name: blog_main_page
-  label: Blog Main Page
-  view: views/blog-home.tpl
-  type: templateset
-  hasRoute: true
-  showAsTable: true
-  content: contents/blog-page.yaml
-  fields:
-   -
-    name: title
-    type: text
-    label: Blog Title
-    options:
-     required: true
-   -
-    name: description
-    type: wysiwyg_advanced
-    label: Blog Description
- -
-  name: blog_authors_page
-  label: Authors Page
-  parent: blog_main_page	  # the model's parent, this organizes config and the navigation layout. For routing, Page parents are set in the contents yaml
-  view: views/blog-authors-page.tpl
-  type: templateset
-  content: contents/blog-authors.yaml
-  hasRoute: true
-  showAsTable: true
-  fields:
-   -
-    name: title
-    type: text
-    label: Author Title
-    options:
-     required: true
-   -
-    name: description
-    type: wysiwyg_advanced
-    label: Author Description
- -
-  name: blog_authors
-  label: Authors
-  parent: blog_authors_page	  # the collection's parent, this organizes config and the navigation layout. For routing, Page parents are set in the contents yaml
-  view: views/blog-author.tpl
-  type: templateset
-  content: contents/blog-authors.yaml
-  hasRoute: false
-  showAsTable: true
-  fields:
-   -
-    name: name
-    type: text
-    label: Author Name
-    options:
-     required: true
-     list: true
-     sortTable: true
-   -
-    name: title
-    label: Author Title
-    type: text
-   -
-    name: company
-    label: Author Company
-    type: text
-   -
-    name: email
-    type: text
-    label: Author Email
-    options:
-     required: true
-     list: true
-   -
-    name: image
-    type: images
-    label: Author Photo
-    options:
-     required: true
-     limit: 1
-     list: true
-   -
-    name: description
-    label: Author Description
-    type: wysiwyg_advanced
-   -
-    name: image
-    type: images
-    label: Author Photo
-    options:
-     required: true
-     limit: 1
-     list: true
-   -
-    name: link
-    type: link
-    label: Author URL
--
-  name: blog_articles
-  label: Articles
-  parent: blog_main_page
-  view: views/blog-article.tpl
-  type: templateset
-  content: contents/blog-articles.yaml
-  hasRoute: true
-  showAsTable: true
-  fields:
-    -
-      name: title
-      label: Article Title
-      type: text
-    -
-      name: body
-      label: body
-      type: wysiwyg_basic
-    -
-      name: tags
-      label: article tags
-      type: many_to_one
-      options:
-        relationship: 
-          model: blog_tags
-          display: title
-    -
-      name: author
-      label: Author
-      type: one_to_one
-      options:
-        relationship: 
-          model: blog_authors
-          display: name
-    -
-      name: image
-      type: images
-      label: Article Image
-      options:
+  - name: blog_main_page
+    label: Blog Main Page
+    view: views/blog-home.tpl
+    type: templateset
+    hasRoute: true
+    showAsTable: true
+    content: contents/blog-page.yaml
+    fields:
+      - name: title
+        type: text
+        label: Blog Title
+        options:
+          required: true
+      - name: description
+        type: wysiwyg_advanced
+        label: Blog Description
+  - name: blog_authors_page
+    label: Authors Page
+    parent: blog_main_page
+    view: views/blog-authors-page.tpl
+    type: templateset
+    content: contents/blog-authors.yaml
+    hasRoute: true
+    showAsTable: true
+    fields:
+      - name: title
+        type: text
+        label: Author Title
+        options: null
+        required: true
+      - name: description
+        type: wysiwyg_advanced
+        label: Author Description
+  - name: blog_authors
+    label: Authors
+    parent: blog_authors_page
+    view: views/blog-author.tpl
+    type: templateset
+    content: contents/blog-authors.yaml
+    hasRoute: false
+    showAsTable: true
+    fields:
+      - name: name
+        type: text
+        label: Author Name
+        options: null
+        required: true
+        list: true
+        sortTable: true
+      - name: title
+        label: Author Title
+        type: text
+      - name: company
+        label: Author Company
+        type: text
+      - name: email
+        type: text
+        label: Author Email
+        options: null
+        required: true
+        list: true
+      - name: image
+        type: images
+        label: Author Photo
+        options: null
         required: true
         limit: 1
         list: true
- -
-  name: blog_tags
-  label: Tags
-  parent: blog_main_page	
-  type: templateset
-  view: views/blog-tags.tpl
-  hasRoute: true
-  showAsTable: true
-  fields:
-    -
-      name: title
-      type: text
-      label: Tag Title
-    -
-      name: description
-      type: wysiwig_basic
-      label: Tag Description
-    -
-      name: image
-      type: image
-      label: Tag Image
-      options:
+      - name: description
+        label: Author Description
+        type: wysiwyg_advanced
+      - name: image
+        type: images
+        label: Author Photo
+        options: null
         required: true
         limit: 1
         list: true
-
+      - name: link
+        type: link
+        label: Author URL
+  - name: blog_articles
+    label: Articles
+    parent: blog_main_page
+    view: views/blog-article.tpl
+    type: templateset
+    content: contents/blog-articles.yaml
+    hasRoute: true
+    showAsTable: true
+    fields:
+      - name: title
+        label: Article Title
+        type: text
+      - name: body
+        label: body
+        type: wysiwyg_basic
+      - name: tags
+        label: article tags
+        type: many_to_one
+        options:
+          relationship:
+            model: blog_tags
+            display: title
+      - name: author
+        label: Author
+        type: one_to_one
+        options:
+          relationship:
+            model: blog_authors
+            display: name
+      - name: image
+        type: images
+        label: Article Image
+        options:
+          required: true
+          limit: 1
+          list: true
+  - name: blog_tags
+    label: Tags
+    parent: blog_main_page
+    type: templateset
+    view: views/blog-tags.tpl
+    hasRoute: true
+    showAsTable: true
+    fields:
+      - name: title
+        type: text
+        label: Tag Title
+      - name: description
+        type: wysiwig_basic
+        label: Tag Description
+      - name: image
+        type: image
+        label: Tag Image
+        options:
+          required: true
+          limit: 1
+          list: true
