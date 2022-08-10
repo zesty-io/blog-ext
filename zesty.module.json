@@ -2,7 +2,7 @@
     "name":"Generic Blog",
     "reference-name":"generic-blog",
     "schema" : "schema.yaml",
-    "settings" : "setting.yaml",
+    "settings" : "settings.yaml",
     "style_variables" : "style-variables.yaml",
     "files" : "files.yaml"
 }
