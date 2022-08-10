@@ -30,8 +30,8 @@ models:
       - name: title
         type: text
         label: Author Title
-        options: null
-        required: true
+        options:
+          required: true
       - name: description
         type: wysiwyg_advanced
         label: Author Description
@@ -47,10 +47,10 @@ models:
       - name: name
         type: text
         label: Author Name
-        options: null
-        required: true
-        list: true
-        sortTable: true
+        options: 
+          required: true
+          list: true
+          sortTable: true
       - name: title
         label: Author Title
         type: text
@@ -60,19 +60,19 @@ models:
       - name: email
         type: text
         label: Author Email
-        options: null
-        required: true
-        list: true
+        options:
+          required: true
+          list: true
       - name: description
         label: Author Description
         type: wysiwyg_advanced
       - name: image
         type: images
         label: Author Photo
-        options: null
-        required: true
-        limit: 1
-        list: true
+        options:
+          required: true
+          limit: 1
+          list: true
       - name: link
         type: link
         label: Author URL
