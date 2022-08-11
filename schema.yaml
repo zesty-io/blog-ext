@@ -76,6 +76,27 @@ models:
       - name: link
         type: link
         label: Author URL
+  - name: blog_tags
+    label: Tags
+    parent: blog_main_page
+    type: templateset
+    view: views/blog-tags.tpl
+    hasRoute: true
+    showAsTable: true
+    fields:
+      - name: title
+        type: text
+        label: Tag Title
+      - name: description
+        type: wysiwyg_basic
+        label: Tag Description
+      - name: image
+        type: images
+        label: Tag Image
+        options:
+          required: true
+          limit: 1
+          list: true
   - name: blog_articles
     label: Articles
     parent: blog_main_page
@@ -108,27 +129,6 @@ models:
       - name: image
         type: images
         label: Article Image
-        options:
-          required: true
-          limit: 1
-          list: true
-  - name: blog_tags
-    label: Tags
-    parent: blog_main_page
-    type: templateset
-    view: views/blog-tags.tpl
-    hasRoute: true
-    showAsTable: true
-    fields:
-      - name: title
-        type: text
-        label: Tag Title
-      - name: description
-        type: wysiwyg_basic
-        label: Tag Description
-      - name: image
-        type: images
-        label: Tag Image
         options:
           required: true
           limit: 1
