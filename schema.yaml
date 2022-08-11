@@ -114,7 +114,7 @@ models:
         type: wysiwyg_basic
       - name: tags
         label: article tags
-        type: many_to_one
+        type: one_to_many
         options:
           relationship:
             model: blog_tags
