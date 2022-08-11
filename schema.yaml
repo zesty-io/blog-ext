@@ -5,7 +5,6 @@ models:
   - name: blog_main_page
     label: Blog Main Page
     view: views/blog-home.tpl
-    type: templateset
     hasRoute: true
     showAsTable: true
     content: contents/blog-page.yaml
@@ -22,7 +21,6 @@ models:
     label: Authors Page
     parent: blog_main_page
     view: views/blog-authors-page.tpl
-    type: templateset
     content: contents/blog-authors.yaml
     hasRoute: true
     showAsTable: true
@@ -39,7 +37,6 @@ models:
     label: Authors
     parent: blog_authors_page
     view: views/blog-author.tpl
-    type: templateset
     content: contents/blog-authors.yaml
     hasRoute: false
     showAsTable: true
@@ -79,7 +76,6 @@ models:
   - name: blog_tags
     label: Tags
     parent: blog_main_page
-    type: templateset
     view: views/blog-tags.tpl
     hasRoute: true
     showAsTable: true
@@ -101,7 +97,6 @@ models:
     label: Articles
     parent: blog_main_page
     view: views/blog-article.tpl
-    type: templateset
     content: contents/blog-articles.yaml
     hasRoute: true
     showAsTable: true
