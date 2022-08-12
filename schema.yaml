@@ -6,7 +6,7 @@ models:
     label: Blog Main Page
     view: views/blog-home.tpl
     hasRoute: true
-    showAsTable: true
+    showAsTable: false
     content: contents/blog-page.yaml
     fields:
       - name: title
